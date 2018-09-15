@@ -1,0 +1,32 @@
+<main>
+    <h1>Munch Pie</h1>
+    <div class="grid">
+        <div class="available">
+            <h3>Our Pie's</h3>
+            {{#each pie}}
+                {{#unless devoured}}
+                <div>
+                    {{pie_name}}
+                    <button class="hog" onclick="hog({{pie_id}})">Hog It</button>
+                </div>
+                {{/unless}}
+            {{/each}}
+        </div>
+        <div class="add">
+            <img src="/public/pie.png" height="100px">
+            <h3>Add A Pie</h3>
+            <input id="pie_name" type="text">
+            <button id="submit" onclick="addPie()">Submit</button>
+        </div>
+        <div class="hogs">
+            <h3>Hog Pie</h3>
+            {{#each pie}}
+                {{#if hogs}}
+                <div>
+                    {{pie_name}}
+                </div>
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
+</main>

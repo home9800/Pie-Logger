@@ -1,0 +1,27 @@
+{
+  "name": "pie-logger",
+  "version": "1.0.0",
+  "description": "A test",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/home9800/Pie-Logger"
+  },
+  "author": "Artur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/home9800/Pie-Logger.git"
+  },
+  "homepage": "https://github.com/home9800/Pie-Logger",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mysql2": "^1.6.1",
+    "sequelize": "^4.38.0"
+  }
+}
