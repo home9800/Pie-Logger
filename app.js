@@ -12,7 +12,7 @@ const routes = require('./controllers/routes.js');
 const app = express();
 
 //  Port selection
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT);
 
 // Parser
 app.use(bodyParser.urlencoded({extended: true}));

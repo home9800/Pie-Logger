@@ -4,6 +4,7 @@
   "description": "A test",
   "main": "app.js",
   "scripts": {
+    "start": "node app",
     "test": "nodemon app"
   },
   "repository": {

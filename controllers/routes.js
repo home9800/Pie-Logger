@@ -1,9 +1,9 @@
-const Pie = require('../models/pizzas');
+const Pie = require('../models/orm');
 
 const routes = (app) => {
 
     app.get('/', (req, res) => {
-        Pie.findAll().then(pie => {
+        Pie.selectAll().then(pie => {
             res.render('index', { pie: pie });
         })
     })
@@ -12,7 +12,7 @@ const routes = (app) => {
         console.log('incoming post request');
         let pieName = req.body.pieName;
         
-        Pie.create({ pie_name: pieName }).then(pie => {
+        Pie.insertOne(pieName).then(pie => {
             if(!pie) {
                 console.log("Opps, something went wrong!");
                 //Error wont come up, find a work around!!!
@@ -26,11 +26,7 @@ const routes = (app) => {
         console.log('incoming put request');
         let pieId = req.body.pieId;
         
-        Pie.update(
-            { devoured: true },
-            { where: {pie_id: pieId} }
-        )
-        .then(pie => {
+        Pie.updateOne(pieId).then(pie => {
             if(!pie) {
                 console.log("Opps, something went wrong!");
             } else {
